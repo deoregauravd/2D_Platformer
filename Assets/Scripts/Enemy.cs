@@ -8,14 +8,14 @@ public class Enemy : MonoBehaviour
     public float fireRate = 0.5f; // The rate at which the enemy can fire bullets
     public GameObject bulletPrefab; // The prefab for the enemy's bullets
     public Transform firePoint; // The point at which the bullets will be instantiated
-
     private float timeSinceLastShot = 0f; // The time since the enemy last fired a bullet
-
+    
+    
     // Update is called once per frame
     void Update()
     {
         // Move the enemy towards the player
-        transform.position = Vector2.MoveTowards(transform.position, Player.position, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, Player.Instance.player.position, speed * Time.deltaTime);
 
         // Increment the time since the last shot by the time since the last frame
         timeSinceLastShot += Time.deltaTime;
@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour
     bool PlayerInRange()
     {
         // Get the distance to the player
-        float distanceToPlayer = Vector2.Distance(transform.position, Player.position);
+        float distanceToPlayer = Vector2.Distance(transform.position, Player.Instance.player.position);
 
         // Return true if the distance to the player is less than a certain value
         return distanceToPlayer < 10f;
@@ -46,6 +46,6 @@ public class Enemy : MonoBehaviour
 
         // Get the bullet's rigidbody and set its velocity towards the player
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.velocity = (Player.position - firePoint.position).normalized * 5f;
+        rb.velocity = (Player.Instanece.player.position - firePoint.position).normalized * 5f;
     }
 }

@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
-public class PlayerMovement : MonoBehaviour
+public class Player : MonoBehaviour
 {
+// instance 
+    private static Player instance;
+    public static Player Instance { get {return instance;}}
+
     private Rigidbody2D rb;
     private float dirX = 0f;
     private float Movespeed = 6f;
@@ -15,7 +19,18 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer sprite;
     private enum MovementState { idle, running, jumping, falling }
     private float lockpos = 0;
-    
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
 
     void Start()
     {
@@ -40,11 +55,8 @@ public class PlayerMovement : MonoBehaviour
 
         UpdateAnimatorAnimation();
     }
+
     
-    
-
-
-
 private void UpdateAnimatorAnimation()
     {
         MovementState state;
