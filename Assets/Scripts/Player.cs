@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     private SpriteRenderer sprite;
     private enum MovementState { idle, running, jumping, falling }
     private float lockpos = 0;
+    private GameObject player;
 
     private void Awake()
     {
@@ -56,7 +57,7 @@ public class Player : MonoBehaviour
         UpdateAnimatorAnimation();
     }
 
-    
+
 private void UpdateAnimatorAnimation()
     {
         MovementState state;
