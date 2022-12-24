@@ -24,7 +24,7 @@ public class JsonReader : MonoBehaviour
 
     void Start()
     {
-       // myPlayerList = JsonUtility.fromJson<PlayerList>(textJson.text);
+     
       myPlayerList = JsonUtility.FromJson<PlayerList>(textJson.text);
 
     }
