@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-   pubic float fullHealth;
-   
-   float currentHealth;
+  public float fullHealth;
+  float currentHealth;
 
    void Start()
    {
@@ -32,7 +31,7 @@ public class PlayerHealth : MonoBehaviour
 
    IEnumerator MakeDead()
    {
-    Yield return new WaitForSeconds (1.5f);
+    Yield return new WaitForSeconds(1.5f);
     SceneManager.LoadScene("Home_Main");
    }
 }
