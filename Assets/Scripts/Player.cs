@@ -5,10 +5,8 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class Player : MonoBehaviour
 {
-// instance 
     private static Player instance;
     public static Player Instance { get {return instance;}}
-
     private Rigidbody2D rb;
     private float dirX = 0f;
     private float Movespeed = 6f;
@@ -19,7 +17,6 @@ public class Player : MonoBehaviour
     private SpriteRenderer sprite;
     private enum MovementState { idle, running, jumping, falling }
     private float lockpos = 0;
-   // private GameObject player;
     public Transform player;
 
     private void Awake()
@@ -39,8 +36,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
-        sprite = GetComponent<SpriteRenderer>();
-        
+        sprite = GetComponent<SpriteRenderer>();   
     }
 
     // Update is called once per frame
