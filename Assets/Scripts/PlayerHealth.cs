@@ -1,37 +1,64 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
-  public float fullHealth;
-  float currentHealth;
-  
-   void Start()
-   {
-     currentHealth = fullHealth;
-   }
+    public float fullHealth;
+    float currentHealth;  
+    private static PlayerHealth instance;
 
-   public void AddDamage(float damage)
-   {
+        public static PlayerHealth Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = FindObjectOfType<PlayerHealth>();
+                }
+                return instance;
+            }
+        }
 
-    if (damage <=0) return;
-    currentHealth -= damage;
+        private void Awake()
+        {
+            if (instance == null)
+            {
+                instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
+    
 
-    if (currentHealth <= 0)
+
+    void Start()
     {
-      Death();
+        currentHealth = fullHealth;
     }
-   }
 
-   public void Death()
-   {
-       StartCoroutine("MakeDead");
-   }
+    public void AddDamage(float damage)
+    {
 
-   IEnumerator MakeDead()
-   {
-     Yield return new WaitForSeconds(1.5f);
-     SceneManager.LoadScene("Home_Main");
-   }
+        if (damage <= 0) return;
+        currentHealth -= damage;
+
+        if (currentHealth <= 0)
+        {
+            Death();
+        }
+    }
+
+    public void Death()
+    {
+        StartCoroutine(MakeDead());
+    }
+
+    IEnumerator MakeDead()
+    {
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene("Home_Main");
+    }
 }

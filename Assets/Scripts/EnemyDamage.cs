@@ -6,6 +6,9 @@ public class EnemyDamage : MonoBehaviour
 {
     public float damage;
     public float damageRate;
+    public float nextDamage;
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -23,8 +26,9 @@ public class EnemyDamage : MonoBehaviour
         if (other.tag == "Player" && nextDamage < Time.time)
         {
             PlayerHealth playHealth = other.gameObject.GetComponent<PlayerHealth>();
-            PlayerHealth.AddDamage(damage);
+            PlayerHealth.Instance.AddDamage(damage);
             nextDamage = Time.time + damageRate;
+            
             
         }
     }
