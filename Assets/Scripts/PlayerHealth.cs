@@ -6,7 +6,7 @@ public class PlayerHealth : MonoBehaviour
 {
   public float fullHealth;
   float currentHealth;
-
+  
    void Start()
    {
      currentHealth = fullHealth;
@@ -31,7 +31,7 @@ public class PlayerHealth : MonoBehaviour
 
    IEnumerator MakeDead()
    {
-    Yield return new WaitForSeconds(1.5f);
-    SceneManager.LoadScene("Home_Main");
+     Yield return new WaitForSeconds(1.5f);
+     SceneManager.LoadScene("Home_Main");
    }
 }
