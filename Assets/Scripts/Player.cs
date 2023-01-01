@@ -19,7 +19,8 @@ public class Player : MonoBehaviour
     private SpriteRenderer sprite;
     private enum MovementState { idle, running, jumping, falling }
     private float lockpos = 0;
-    private GameObject player;
+   // private GameObject player;
+    public Transform player;
 
     private void Awake()
     {
@@ -39,6 +40,7 @@ public class Player : MonoBehaviour
         coll = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
+        
     }
 
     // Update is called once per frame

@@ -46,6 +46,6 @@ public class Enemy : MonoBehaviour
 
         // Get the bullet's rigidbody and set its velocity towards the player
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.velocity = (Player.Instanece.player.position - firePoint.position).normalized * 5f;
+        rb.velocity = (Player.Instance.player.position - firePoint.position).normalized * 5f;
     }
 }
