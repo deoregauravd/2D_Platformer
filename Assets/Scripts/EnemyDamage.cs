@@ -27,9 +27,7 @@ public class EnemyDamage : MonoBehaviour
         {
             PlayerHealth playHealth = other.gameObject.GetComponent<PlayerHealth>();
             PlayerHealth.Instance.AddDamage(damage);
-            nextDamage = Time.time + damageRate;
-            
-            
+            nextDamage = Time.time + damageRate; 
         }
     }
 }
