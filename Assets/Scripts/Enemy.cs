@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     public float fireRate = 0.5f; // The rate at which the enemy can fire bullets
     public GameObject bulletPrefab; // The prefab for the enemy's bullets
     public Transform firePoint; // The point at which the bullets will be instantiated
-    private float timeSinceLastShot = 0f; // The time since the enemy last fired a bullet
+    private float timeSinceLastShot = 1f; // The time since the enemy last fired a bullet
     
     
     // Update is called once per frame
