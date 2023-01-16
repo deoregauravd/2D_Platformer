@@ -20,8 +20,9 @@ public class CoinPool : MonoBehaviour
         for ( int i=0; i < coinPoolSize; i++)
         {
             GameObject coin = Instantiate(coinPrefab);
-            coin.transform.position = new Vector3(0,0,i * 10);
+            coin.transform.position = new Vector3(i * 10, i*0.2f, 3);
             coin.gameObject.SetActive(true);
+            Debug.Log("just Checking start performance");
         }
     }
 }
