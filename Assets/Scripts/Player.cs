@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
 public class Player : MonoBehaviour
-{
+{   // Player Physics
+
     private static Player instance;
     public static Player Instance { get {return instance;}}
     private Rigidbody2D rb;
@@ -15,6 +16,8 @@ public class Player : MonoBehaviour
     [SerializeField] private LayerMask Jumpableground;
     private Animator anim;
     private SpriteRenderer sprite;
+
+    // Player Animation
     private enum MovementState { idle, running, jumping, falling }
     private float lockpos = 0;
     public Transform player;
