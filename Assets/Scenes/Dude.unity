@@ -1371,9 +1371,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 674ba9025a83da945a7a07a3fe043d26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinPoolObj: []
-  coinPoolSize: 0
-  coinPrefab: {fileID: 0}
+  coinPoolObj:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  coinPoolSize: 10
+  coinPrefab: {fileID: 3940333124443988264, guid: 3965ff1192214d94d858684a1e6633fe,
+    type: 3}
 --- !u!4 &932910649
 Transform:
   m_ObjectHideFlags: 0
