@@ -14,8 +14,9 @@ public class CoinPool : MonoBehaviour
         CoinPoolInstance = this;
     }
 
-    public void start()
+    public void Start()
     {
+        
         for ( int i=0; i < coinPoolSize; i++)
         {
             GameObject coin = Instantiate(coinPrefab);
