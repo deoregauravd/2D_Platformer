@@ -6,6 +6,7 @@ public class CoinPool : MonoBehaviour
 {
     public static CoinPool CoinPoolInstance;
     [SerializeField] private GameObject[] coinPoolObj;
+
     [SerializeField] private int coinPoolSize;
     [SerializeField] private GameObject coinPrefab;
 
@@ -15,8 +16,7 @@ public class CoinPool : MonoBehaviour
     }
 
     public void Start()
-    {
-        
+    { 
         for ( int i=0; i < coinPoolSize; i++)
         {
             GameObject coin = Instantiate(coinPrefab);
@@ -24,5 +24,11 @@ public class CoinPool : MonoBehaviour
             coin.gameObject.SetActive(true);
             Debug.Log("just Checking start performance");
         }
+
+    }
+
+    void GetCoin()
+    {
+        CoinPool.CoinPoolInstance.coinPoolObj.
     }
 }
