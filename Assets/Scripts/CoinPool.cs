@@ -29,6 +29,6 @@ public class CoinPool : MonoBehaviour
 
     void GetCoin()
     {
-        CoinPool.CoinPoolInstance.coinPoolObj.
+        
     }
 }
