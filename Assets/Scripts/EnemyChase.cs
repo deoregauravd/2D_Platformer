@@ -22,7 +22,7 @@ public class EnemyChase : MonoBehaviour
         timeSinceLastShot += Time.deltaTime;
 
        
-        if (timeSinceLastShot > fireRate && PlayerInRange())
+        if (timeSinceLastShot > fireRate )
         {
             FireBullet();
             timeSinceLastShot = 0f;
@@ -32,20 +32,12 @@ public class EnemyChase : MonoBehaviour
     
 
 
-    // Returns true if the player is within range of the enemy
-    bool PlayerInRange()
-    {
-        // Get the distance to the player
-        float distanceToPlayer = Vector2.Distance(transform.position, Player.Instance.player.position);
-
-        // Return true if the distance to the player is less than a certain value
-        return distanceToPlayer < 10f;
-    }
-
-    // Fires a bullet from the enemy's fire point
+   
+  
+ 
     void FireBullet()
     {
-        // Instantiate a bullet at the fire point
+        
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
 
      
