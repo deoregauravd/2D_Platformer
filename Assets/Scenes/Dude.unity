@@ -1547,6 +1547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 682a9137073601069937991dd35eab52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTransform: {fileID: 113068503}
   speed: 2
   fireRate: 0.5
   bulletPrefab: {fileID: 6021830620029562539, guid: a76ba0303bf65cf42b4eecd2bc402119,
