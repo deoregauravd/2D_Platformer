@@ -3,8 +3,16 @@
     "configurations": [
         {
             "name": "Attach to Unity",
+            "type": "unity",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}",
+            "stopOnEntry": false,
+            "console": "internalConsole"
+        },
+        {
+            "name": "Attach to Unity",
             "type": "vstuc",
             "request": "attach"
         }
-     ]
+    ]
 }

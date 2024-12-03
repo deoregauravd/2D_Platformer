@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     public static Player Instance { get {return instance;}}
     private Rigidbody2D rb;
     private float dirX = 0f;
-    private float Movespeed = 6f;
+   [SerializeField] private float Movespeed = 6f;
     private float JumpSpeed = 10f;
     private BoxCollider2D coll;
     [SerializeField] private LayerMask Jumpableground;
@@ -54,6 +54,8 @@ public class Player : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, JumpSpeed);
         }
+
+        Movespeed += 0.001f;
 
         UpdateAnimatorAnimation();
     }
